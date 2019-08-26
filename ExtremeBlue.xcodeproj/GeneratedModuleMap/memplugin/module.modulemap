@@ -1,0 +1,4 @@
+module memplugin {
+    umbrella "/Users/daniel.mandea@ro.ibm.com/Developer/mtd/ibm-extreme-blue/.build/checkouts/omr-agentcore/src/memplugin/include"
+    export *
+}

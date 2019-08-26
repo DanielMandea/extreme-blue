@@ -14,10 +14,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "mtd-blog::mtd-blog"
-               BuildableName = "mtd-blog"
-               BlueprintName = "mtd-blog"
-               ReferencedContainer = "container:mtd-blog.xcodeproj">
+               BlueprintIdentifier = "ExtremeBlue::ExtremeBlue"
+               BuildableName = "ExtremeBlue"
+               BlueprintName = "ExtremeBlue"
+               ReferencedContainer = "container:ExtremeBlue.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ExtremeBlue::Application"
+               BuildableName = "Application.framework"
+               BlueprintName = "Application"
+               ReferencedContainer = "container:ExtremeBlue.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +46,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "mtd-blog::ApplicationTests"
+               BlueprintIdentifier = "ExtremeBlue::ApplicationTests"
                BuildableName = "ApplicationTests.xctest"
                BlueprintName = "ApplicationTests"
-               ReferencedContainer = "container:mtd-blog.xcodeproj">
+               ReferencedContainer = "container:ExtremeBlue.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -50,16 +64,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "mtd-blog::mtd-blog"
-            BuildableName = "mtd-blog"
-            BlueprintName = "mtd-blog"
-            ReferencedContainer = "container:mtd-blog.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

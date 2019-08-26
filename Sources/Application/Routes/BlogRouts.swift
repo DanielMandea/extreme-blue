@@ -11,6 +11,7 @@ import LoggerAPI
 import KituraStencil
 import Configuration
 import CouchDB
+import KituraMarkdown
 
 public class BlogRouts {
     
@@ -23,6 +24,8 @@ public class BlogRouts {
     
     public init(router: Router) {
         self.router = router
+        self.router.add(templateEngine: KituraMarkdown())
+        self.router.setDefault(templateEngine: KituraMarkdown())
     }
     
     // MARK: - Routs 
@@ -59,6 +62,19 @@ public class BlogRouts {
         do { try response.render("blog/\(name)", with: post, forKey: "post") } catch { Log.debug(error.localizedDescription) }
         next()
     }
+    
+    func any(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) {
+        response.headers["Content-Type"] = "text/html"
+        try response.render(request.urlURL.path, context: [String:Any]())
+        try response.end()
+    }
+    
+    func index(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) {
+        response.headers["Content-Type"] = "text/html"
+        try response.render("/docs/index.md", context: [String:Any]())
+        try response.status(.OK).end()
+    }
+    
 }
 
 // MARK: - RoutsCompose
@@ -71,5 +87,7 @@ extension BlogRouts: RoutsCompose {
         router.all(Constants.BlogRouts.publicPath, middleware: StaticFileServer())
         router.get(Constants.BlogRouts.blog, handler: blog)
         router.get(Constants.BlogRouts.blogEntry, handler: blogEntry)
+        router.get(Constants.Markdown.index, handler: index)
+        router.get(Constants.Markdown.any, handler: any)
     }
 }

@@ -19,6 +19,11 @@ struct Constants {
         static let blogEntry: String = "blog/:name"
     }
     
+    struct Markdown {
+        static let index = "docs"
+        static let any = "docs/*"
+    }
+    
     struct HealthRouts {
         static let health: String = "health"
     }
