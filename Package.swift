@@ -12,13 +12,12 @@ let package = Package(
       .package(url: "https://github.com/IBM-Swift/Health.git", from: "1.0.0"),
       .package(url: "https://github.com/IBM-Swift/Kitura-StencilTemplateEngine.git", from: "1.10.0"),
       .package(url: "https://github.com/IBM-Swift/Kitura-CouchDB.git", from: "3.1.1"),
-      .package(url: "https://github.com/mxcl/PromiseKit.git", from: "6.8.4"),
       .package(url: "https://github.com/IBM-Swift/FileKit.git", from: "0.0.2"),
       .package(url: "https://github.com/IBM-Swift/Kitura-Markdown.git", from: "1.0.0")
     ],
     targets: [
-        .target(name: "ExtremeBlue", dependencies: [ .target(name: "Application"), "Kitura" , "HeliumLogger", "KituraStencil", "CouchDB", "PromiseKit", "FileKit", "KituraMarkdown"]),
-        .target(name: "Application", dependencies: [ "Kitura", "CloudEnvironment","SwiftMetrics", "Health", "KituraStencil", "CouchDB", "PromiseKit", "FileKit"]),
-        .testTarget(name: "ApplicationTests" , dependencies: [.target(name: "Application"), "Kitura","HeliumLogger", "KituraStencil", "PromiseKit", "ExtremeBlue"])
+        .target(name: "ExtremeBlue", dependencies: [ .target(name: "Application"), "Kitura" , "HeliumLogger", "KituraStencil", "CouchDB", "FileKit", "KituraMarkdown"]),
+        .target(name: "Application", dependencies: [ "Kitura", "CloudEnvironment","SwiftMetrics", "Health", "KituraStencil", "CouchDB", "FileKit"]),
+        .testTarget(name: "ApplicationTests" , dependencies: [.target(name: "Application"), "Kitura","HeliumLogger", "KituraStencil", "ExtremeBlue"])
     ]
 )

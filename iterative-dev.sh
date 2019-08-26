@@ -15,7 +15,7 @@ function killServerProcesses() {
     pid="$(pgrep mtd-blog)"
     if [ "$pid" != "" ]
     then
-        echo "killing mtd-blog"
+        echo "killing ExtremeBlue"
         kill $pid
     fi
 
